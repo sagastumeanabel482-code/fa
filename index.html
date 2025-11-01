@@ -1,0 +1,75 @@
+
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Montaña Viva</title>
+    <style>
+        body {font-family: Arial, sans-serif;margin: 0; background-color: #ffffff; text-align: center; }
+
+        header {background-color: #D4AF37;color: white; padding: 20px;}
+
+
+        .galeria {display: flex;justify-content: center; flex-wrap: wrap;gap: 15px;padding: 20px;}
+
+        .galeria img { width: 300px; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Café Montaña Viva</h1>
+        <p>Por que cada taza cuenta una historia de dedicación, pasión y calidad, servida con el aroma inconfundible del mejor café.</p>
+    </header>
+
+    <h2 style="color:#000000;">Café de Calidad</h2>
+
+    <div class="galeria">
+        <img src="img/2.jpg" alt="2">
+        <img src="img/cafe.webp" alt="cafe">
+        <img src="img/a.jpg" alt="a">
+    </div>
+
+<button id="btnComentar" style="background:#4CAF50;color:white;padding:6px 10px;font-size:12px;border:none;border-radius:5px;cursor:pointer;">Comentar </button>
+
+<div id="cajaComentario" style="display:none;margin-top:10px;background:white;border:1px solid #ccc;padding:10px;border-radius:8px;width:200px;">
+
+  <textarea id="comentario" rows="3" cols="25" placeholder="Escribe tu comentario..."></textarea><br>
+  <button onclick="enviarComentario()">Enviar</button>
+</div>
+
+<script>
+document.getElementById("btnComentar").onclick = function() { let caja = document.getElementById("cajaComentario");caja.style.display = (caja.style.display === "none") ? "block" : "none";}
+
+function enviarComentario() {  let texto = document.getElementById("comentario").value;if (texto.trim() !== "") {  alert("Comentario enviado: " + texto);document.getElementById("comentario").value = ""; } else { alert("Escribe un comentario antes de enviar."); }}
+
+</script>
+<button id="btnLike" style="background:#e91e63;color:white;padding:6px 10px;font-size:12px;border:none;border-radius:5px;cursor:pointer;">Like <span id="contador">0</span>
+</button>
+
+<script>
+let likes = 0;
+document.getElementById("btnLike").onclick = function() { likes++; document.getElementById("contador").innerText = likes; }
+
+</script>
+<a href="https://wa.me/50495172944" target="_blank" style="text-decoration:none;">
+  <img src="img/wha.jpeg" alt="WhatsApp" width="35" height="35" style="border-radius:50%;vertical-align:middle;"> </a>
+
+    </header>
+<a href="Index1.html" class="boton-flotante izquierda1">Inicio</a>
+<a href="Index2.html" class="boton-flotante izquierda2">Breve historia</a>
+<a href="Index3.html" class="boton-flotante derecha1">Precio</a>
+<a href="Index4.html" class="boton-flotante derecha2">Produc</a>
+
+<style>
+.boton-flotante { position: fixed; bottom: 20px; /* altura desde abajo */  background-color: #FFA500;  color: white;  padding: 10px 18px; text-decoration: none;border-radius: 8px;font-family: Arial, sans-serif; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);  transition: 0.3s;}
+
+.boton-flotante:hover { background-color: #A0522D; transform: scale(1.05);}
+
+.izquierda1 { left: 20px; }.izquierda2 { left: 120px; }.derecha1 { right: 120px; }.derecha2 { right: 20px; }
+
+</style>
+
+</body>
+</html>
